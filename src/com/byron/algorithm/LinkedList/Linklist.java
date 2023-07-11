@@ -19,7 +19,7 @@ public class Linklist<T> {
             head = newNode;
             //null Linklist
             if (this.size == 0) {
-                head = tail = newNode;
+                tail = newNode;
             }
             this.size++;
             //tail insert
@@ -32,7 +32,7 @@ public class Linklist<T> {
             }
             size++;
         }
-        // mid insert
+        // insert in list
         else {
             // search previousIndex from head
             prev = head;
@@ -52,15 +52,38 @@ public class Linklist<T> {
             System.out.print(cur.data + "->");
             cur = cur.next;
         }
-        if(cur == null){
+        if(this.size==0){
             System.out.println("null");
         }
         System.out.println(this.size);
     }
 
     public void del(T data){
-        if(){
-
+        //after delete head node, if last one is head node so we need set tail == head
+        if(this.head != null && this.head.data == data){
+            head = head.next;
+            size--;
+            if(size==0){
+                tail = head;
+            }
+            //delete node of list
+        }else {
+            Node<T> prev = head;
+            Node<T> cur = head;
+            while (prev != null && cur != null){
+                if(cur.data == data){
+                    //del last element
+                    if(cur == tail){
+                        tail = prev;
+                    }
+                    prev.next=cur.next;
+                    this.size--;
+                    return;
+                }
+                //if cur.data !=data move prev and cur
+                prev = cur;
+                cur = cur.next;
+            }
         }
     }
 }
