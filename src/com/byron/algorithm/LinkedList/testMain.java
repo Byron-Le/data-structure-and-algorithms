@@ -14,11 +14,16 @@ public class testMain {
         System.out.println("before deletion"+"-".repeat(30));
         StringList.printList();
         System.out.println("after deletion"+"-".repeat(30));
-        StringList.del("5354");
         StringList.del("head");
-        StringList.del("lgiureoiaj4");
         StringList.del("tail");
         StringList.printList();
+
+        int search = StringList.search("x1xx");
+        if (search != -1){
+            System.out.println("data index is " + search);
+        }else {
+            System.out.println("search not found!");
+        }
     }
 
 }

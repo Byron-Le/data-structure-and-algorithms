@@ -52,9 +52,7 @@ public class Linklist<T> {
             System.out.print(cur.data + "->");
             cur = cur.next;
         }
-        if(this.size==0){
-            System.out.println("null");
-        }
+        System.out.println("null");
         System.out.println(this.size);
     }
 
@@ -85,5 +83,16 @@ public class Linklist<T> {
                 cur = cur.next;
             }
         }
+    }
+
+    public int search(T data){
+        Node<T> cur = this.head;
+        for(int index=0;cur!=null;index++){
+            if(cur.data == data){
+                return index;
+            }
+            cur = cur.next;
+        }
+        return -1;
     }
 }
