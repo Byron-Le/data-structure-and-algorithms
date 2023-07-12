@@ -95,4 +95,16 @@ public class Linklist<T> {
         }
         return -1;
     }
+
+    public int updata(T oldData,T newData){
+        Node<T> cur = head;
+        for (int i = 0; cur != null; i++) {
+            if(cur.data == oldData){
+                cur.data = newData;
+                return i;
+            }
+            cur = cur.next;
+        }
+        return -1;
+    }
 }

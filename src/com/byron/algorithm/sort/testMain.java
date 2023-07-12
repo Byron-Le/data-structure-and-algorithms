@@ -1,4 +1,4 @@
-package com.byron.algorithm;
+package com.byron.algorithm.sort;
 
 import java.util.Arrays;
 

@@ -24,6 +24,15 @@ public class testMain {
         }else {
             System.out.println("search not found!");
         }
+
+
+        int updata = StringList.updata("5354", "45454");
+        if(updata != -1){
+            System.out.println("update success! index is " + updata);
+            StringList.printList();
+        }else {
+            System.out.println("update failure, the data is not found");
+        }
     }
 
 }
